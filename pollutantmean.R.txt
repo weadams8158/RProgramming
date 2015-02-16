@@ -1,0 +1,68 @@
+pollutantmean <- function(directory, pollutant, id = 1:332) {
+        ## 'directory' is a character vector of length 1 indicating
+        ## the location of the CSV files
+
+
+        # 1. Get a list of all the files located in the requested directory.
+        #
+        files_full <- list.files(directory, full.names=TRUE)
+
+        #
+        # 2. Create a results summary of tmp.
+        #
+        summary(files_full)
+
+        #
+        # 3. Create an empty list the length of the files_full.
+        #
+        tmp <- vector(mode = "list", length = length(files_full))
+
+        #
+        # 4. Create a results summary of tmp.
+        #
+        summary(tmp)
+
+        #
+        # 5. Place the files_full contents into tmp.
+        #    Each file is now a data frame stored in list named tmp.
+        #
+        for (i in seq_along(files_full)) {
+              tmp[[i]] <- read.csv(files_full[[i]])
+        }
+        #
+        # 6. Combine the data frames found in tmp into a single data frame named output.
+        #
+        output <- do.call(rbind, tmp)
+
+        ## 
+        ## Note the data frame, output contains 4 columns (Date, sulfate, nitrate, ID)
+        ## Each pollutant column has the value determined on that day. 
+        ## These columns may contain N/A values, which must be eliminated.
+        ##
+
+        ## 'pollutant' is a character vector of length 1 indicating
+        ## the name of the pollutant for which we will calculate the
+        ## mean; either "sulfate" or "nitrate".
+
+        #
+        # 7.  Create a subset which the ID contains the requested ID and
+        #     the values are from the requested pollutant column
+        #
+        ## 'id' is an integer vector indicating the monitor ID numbers
+        ## to be used
+
+        ## Return the mean of the pollutant across all monitors list
+        ## in the 'id' vector (ignoring NA values)
+
+        dat_sub <- output[which(output[, "ID" ] == id), pollutant]
+        mean(dat_sub, na.rm=TRUE)
+
+}
+
+
+tout <- pollutantmean("c:/Users/Bill/Documents/RProgramming/specdata","nitrate", 22)
+
+tout
+
+
+

@@ -1,0 +1,41 @@
+| You can exit swirl and return to the R prompt (>) at any time by pressing the
+| Esc key. If you are already at the prompt, type bye() to exit and save your
+| progress. When you exit properly, you'll see a short message letting you know
+| you've done so.
+
+| When you are at the R prompt (>):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore
+| what you do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.
+
+Upon completing each lesson, swirl will ask for your Coursera credentials:
+
+    Course ID: rprog-011
+    Submission login (email): The email address associated with your Coursera account
+    Submission password: This is NOT the password that you use to log into the Coursera website. Your submission password can be found at the top of the Programming Assignments page.
+    Programming Assignment page: https://class.coursera.org/rprog-011/assignment
+
+
+| To begin, you must install a course. I can install a course for you from the
+| internet, or I can send you to a web page
+| (https://github.com/swirldev/swirl_courses) which will provide course options
+| and directions for installing courses yourself. (If you are not connected to
+| the internet, type 0 to exit.)
+
+| If at any point you'd like more information on a particular topic related to
+| R, you can type help.start() at the prompt, which will open a menu of
+| resources (either within RStudio or your default web browser, depending on
+| your setup). Alternatively, a simple web search often yields the answer
+| you're looking for.
+
+| To notify Coursera that you have completed this lesson, please upload
+| <U+0091>rprog=011_Basic_Building_Blocks.txt<U+0092> to Coursera manually. You may do so by
+| visiting the Programming Assignments page on your course website and
+| selecting the Submit button next to the appropriate swirl lesson. I've placed
+| the file in the following directory:
+
+C:/Users/Bill/Documents
