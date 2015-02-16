@@ -7,7 +7,7 @@ corr <- function(directory, threshold = 0) {
         # Get a list of files.
         files_full <- list.files(directory, full.names=TRUE)  
         # create an empty data frame to place our raw data from the files.
-        
+        #
         tmp <- data.frame()
         dat <- data.frame()
         
